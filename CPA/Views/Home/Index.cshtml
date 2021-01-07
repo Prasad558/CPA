@@ -1,0 +1,196 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    /*.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+        padding: 5px;
+        line-height: 1.42857143;
+        vertical-align: top;
+        border-top: 1px solid #ddd;
+    }*/
+    table.table-bordered {
+        border: 1px solid #050021;
+    }
+
+        table.table-bordered > thead > tr > td {
+            border: 1px solid #050021;
+        }
+
+        table.table-bordered > tbody > tr > td {
+            border: 1px solid #050021;
+        }
+
+    .tabs-rounded > ul > li > a {
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;
+        outline: none;
+        color: white !important
+    }
+</style>
+<script src="~/AngularCntrls/dashboardCtrl .js?lmdt=@DateTime.Now.Millisecond"></script>
+<!-- Main content -->
+<section class="content" ng-controller="DashboardCntrl" ng-cloak style="padding-right: 0;">
+
+    <div class="panel-group" style="margin-left: -25px;">
+        <div class="panel panel-default" style="border: none">
+            <div class="panel-heading" style="background:#9b9b9b">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" ng-click="addIconCollapse()" data-parent="#accordionpatient" href="#collapse_search_1">
+                        <span style="font-size: 12px;top: 0;" class="glyphicon glyphicon-triangle-bottom"></span>
+                        Dashboard
+                    </a>
+                </h4>
+            </div>
+            <div id="collapse_search_1" class="panel-collapse" style="border: 1px solid #050021;">
+                <div class="panel-body" style="padding: 0;">
+
+                    <table>
+                        <tr>
+                            <td style="width:  calc(calc(100% / 7) + ((calc(100% / 7) - calc(100% / 13)) / 6)); ">
+                                <div style="width:100%;display: flex">
+                                    <div class="input-group" style="width: 100%;">
+                                        <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Contract Name" name="Licence">
+                                        <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
+                                            <i class="fa fa-user"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="width:  calc(calc(100% / 7) + ((calc(100% / 7) - calc(100% / 13)) / 6))">
+
+                                <div class="input-group" style="width: 100%">
+
+                                    <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Contract Number" name="Licence">
+                                    <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
+                                        <i class="fa fa-sort-numeric-asc"></i>
+                                    </span>
+                                </div>
+                            </td>
+                            <td style="width: calc(100% / 13);padding: 4px;">
+                                <input type="reset" value="Filter" style="height: 40px;" class="btn btn-ggb-orange">
+                                <input type="reset" value="Clear" style="height: 40px;" class="btn btn-ggb-orange">
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td style="width:  calc(calc(100% / 7) + ((calc(100% / 7) - calc(100% / 13)) / 6)); ">
+                                <div style="width:100%;display: flex">
+                                    <div class="input-group" style="width: 100%;">
+                                        <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Party Name" name="Licence">
+                                        <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
+                                            <i class="fa fa-ellipsis-h"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="width:  calc(calc(100% / 7) + ((calc(100% / 7) - calc(100% / 13)) / 6))">
+
+                                <div class="input-group" style="width: 100%">
+
+                                    <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Party Number" name="Licence">
+                                    <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
+                                        <i class="fa fa-sort-numeric-asc"></i>
+                                    </span>
+                                </div>
+                            </td>
+                            <td style="padding: 4px;">
+                                <input type="reset" value="New Party" style="height: 40px;" class="btn btn-ggb-orange">
+                                <input type="reset" value="Existing Party" style="height: 40px;" class="btn btn-ggb-orange">
+
+                            </td>
+
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-group" style="margin-left: -25px;">
+        <div class="panel panel-default" style="border: none" id="Search-2">
+            @*<div class="panel-heading" style="background:#9b9b9b">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" ng-click="addIconCollapse()" data-parent="#Search-2" href="#collapse_search_2">
+                        <span style="font-size: 12px;top: 0;" class="glyphicon glyphicon-triangle-bottom"></span>
+                        
+                    </a>
+                </h4>
+            </div>*@
+            <div id="collapse_search_2" class="panel-collapse" style="border: 1px solid #050021;">
+                <div class="panel-body" style="padding: 0;">
+                    <table class="table table-bordered tabel-condensed" style="margin-bottom:0">
+                        <thead style="background-color:#050021 !important;border-collapse:collapse;white-space:nowrap; font-size:14px;color:#fff !important">
+                            <tr>
+
+                                <td style="width:calc(100% / 12)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">Business Unit</a>&nbsp;</td>
+                                <td style="width:calc(100% / 12)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">Party</a>&nbsp;</td>
+                                <td style="width:calc(100% / 12)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">Contract Name</a>&nbsp;</td>
+                                <td style="width:calc(100% / 12)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">Contract#</a>&nbsp;</td>
+                                <td style="width:calc(100% / 12)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">Creation Date</a>&nbsp;</td>
+                                <td style="width:calc(100% / 12)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">Contract Type</a>&nbsp;</td>
+                                <td style="width:calc(100% / 12)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">Status</a>&nbsp;</td>
+                                <td style="width:calc(100% / 12)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">Start date</a>&nbsp;</td>
+                                <td style="width:calc(100% / 12)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">Last date</a>&nbsp;</td>
+                                <td style="width:calc(calc(100% / 12)*2)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">Notes</a>&nbsp;</td>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="width:calc(100% / 12)">US HQ</td>
+                                <td style="width:calc(100% / 12)"> ABC systems </td>
+                                <td style="width:calc(100% / 12)">CON001</td>
+                                <td style="width:calc(100% / 12)">1234</td>
+                                <td style="width:calc(100% / 12)">07-01-2021</td>
+                                <td style="width:calc(100% / 12)">1st Party Licensed</td>
+                                <td style="width:calc(100% / 12)">Draft</td>
+                                <td style="width:calc(100% / 12)">07-01-2021</td>
+                                <td style="width:calc(100% / 12)">07-05-2021</td>
+                                <td style="width:calc(calc(100% / 12)*2)">Notes...</td>
+                            </tr>
+                            <tr>
+                                <td style="width:calc(100% / 12)">US HQ</td>
+                                <td style="width:calc(100% / 12)"> ABC systems </td>
+                                <td style="width:calc(100% / 12)">CON001</td>
+                                <td style="width:calc(100% / 12)">1234</td>
+                                <td style="width:calc(100% / 12)">07-01-2021</td>
+                                <td style="width:calc(100% / 12)">1st Party Licensed</td>
+                                <td style="width:calc(100% / 12)">Draft</td>
+                                <td style="width:calc(100% / 12)">07-01-2021</td>
+                                <td style="width:calc(100% / 12)">07-05-2021</td>
+                                <td style="width:calc(calc(100% / 12)*2)">Notes...</td>
+                            </tr>
+                            <tr>
+                                <td style="width:calc(100% / 12)">US HQ</td>
+                                <td style="width:calc(100% / 12)"> ABC systems </td>
+                                <td style="width:calc(100% / 12)">CON001</td>
+                                <td style="width:calc(100% / 12)">1234</td>
+                                <td style="width:calc(100% / 12)">07-01-2021</td>
+                                <td style="width:calc(100% / 12)">1st Party Licensed</td>
+                                <td style="width:calc(100% / 12)">Draft</td>
+                                <td style="width:calc(100% / 12)">07-01-2021</td>
+                                <td style="width:calc(100% / 12)">07-05-2021</td>
+                                <td style="width:calc(calc(100% / 12)*2)">Notes...</td>
+                            </tr>
+                            <tr>
+                                <td style="width:calc(100% / 12)">US HQ</td>
+                                <td style="width:calc(100% / 12)"> ABC systems </td>
+                                <td style="width:calc(100% / 12)">CON001</td>
+                                <td style="width:calc(100% / 12)">1234</td>
+                                <td style="width:calc(100% / 12)">07-01-2021</td>
+                                <td style="width:calc(100% / 12)">1st Party Licensed</td>
+                                <td style="width:calc(100% / 12)">Draft</td>
+                                <td style="width:calc(100% / 12)">07-01-2021</td>
+                                <td style="width:calc(100% / 12)">07-05-2021</td>
+                                <td style="width:calc(calc(100% / 12)*2)">Notes...</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /.content -->

@@ -1,0 +1,957 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=10">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
+    <title>CPA</title>
+    <link rel="shortcut icon" href="~/favicon.ico" type="image/x-icon">
+
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    @*<script src="~/Content/plugins/jQuery/jquery-2.2.3.min.js"></script>*@
+    <script src="~/Scripts/angular.min.js"></script>
+
+    <!-- Bootstrap 3.3.6 -->
+    @*<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />*@
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap-select.js"></script>
+    <link href="~/Content/bootstrap-select.css" rel="stylesheet" />
+
+    <link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Ionicons -->
+    @*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">*@
+
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="../bower_components/Ionicons/css/ionicons.min.css">
+    <!-- daterange picker -->
+    <!-- iCheck for checkboxes and radio inputs -->
+    <link href="../Content/plugins/iCheck/all.css" rel="stylesheet" />
+    <!-- Bootstrap Color Picker -->
+    <link href="../Content/plugins/colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" />
+    <!-- Bootstrap time Picker -->
+    <link href="../Content/plugins/timepicker/bootstrap-timepicker.min.css" rel="stylesheet" />
+    <!-- Select2 -->
+    <link href="../Content/plugins/select2/select2.min.css" rel="stylesheet" />
+
+    <!-- fullCalendar -->
+    <link href="~/bower_components/fullcalendar/fullcalendar.css" rel="stylesheet" />
+    <link href="~/bower_components/fullcalendar/fullcalendar.print.css" rel="stylesheet" media="print" />
+    @*<link rel="stylesheet" href="../bower_components/fullcalendar/dist/fullcalendar.min.css">*@
+    @*<link rel="stylesheet" href="../bower_components/fullcalendar/dist/fullcalendar.print.min.css" media="print">*@
+    <!-- Theme style -->
+
+    <link href="~/Content/dist/css/AdminLTE.css" rel="stylesheet" />
+
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link href="../Content/dist/css/skins/_all-skins.min.css" rel="stylesheet" />
+
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+
+    <script src="~/AngularCntrls/GGB.js?latestDate=@DateTime.Now.Millisecond"></script>
+
+    <link href="~/Content/alertifyjs/themes/default.css" rel="stylesheet" />
+    <link href="~/Content/alertifyjs/alertify.css" rel="stylesheet" />
+    <script src="~/Scripts/alertify.min.js"></script>
+
+    <script src="~/Scripts/angular-route.js"></script>
+    <script src="~/Scripts/select.js"></script>
+    <script src="~/Scripts/ngStorage.min.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap-tpls-0.11.0.js"></script>
+    <script src="~/Scripts/angular-sanitize.js"></script>
+    <style>
+        /*table */
+        table {
+            border-collapse: collapse;
+        }
+
+            table th, table td {
+                padding: 3px;
+                height: 20px
+            }
+
+                table th:hover {
+                    cursor: pointer;
+                }
+
+        .arrow-down:after, .arrow-up:after {
+            content: ' ';
+            position: relative;
+            left: 5px;
+            border: 6px solid transparent;
+        }
+
+        .arrow-down:after {
+            top: 12px;
+            border-top-color: black;
+        }
+
+        .arrow-up:after {
+            bottom: 15px;
+            border-bottom-color: black;
+        }
+
+        .arrow-down, .arrow-up {
+            padding-right: 10px;
+        }
+
+        .anchor_sorting {
+            text-decoration: none;
+            color: #fff !important;
+        }
+
+            .anchor_sorting:hover {
+                color: #fff !important;
+            }
+
+        .btn-md-80 {
+            width: 90px !important;
+        }
+
+        .error {
+            color: red;
+            border-color: red;
+        }
+
+        a.disabledInvisible {
+            pointer-events: none;
+            cursor: default;
+        }
+
+        .required_image {
+            width: 7px;
+            margin-top: -10px;
+        }
+
+        input[type='text'] {
+            height: 30px;
+        }
+
+        .add-on {
+            height: 100%;
+        }
+
+        .pagination {
+            height: 40px;
+            margin: 20px 0;
+        }
+
+            .pagination ul {
+                display: inline-block;
+                margin-left: 0;
+                margin-bottom: 0;
+                -webkit-border-radius: 3px;
+                -moz-border-radius: 3px;
+                border-radius: 3px;
+                -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+                -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            }
+
+                .pagination ul > li {
+                    display: inline;
+                }
+
+                    .pagination ul > li:first-child > a, .pagination ul > li:first-child > span {
+                        border-left-width: 1px;
+                        -webkit-border-radius: 3px 0 0 3px;
+                        -moz-border-radius: 3px 0 0 3px;
+                        border-radius: 3px 0 0 3px;
+                    }
+
+                    .pagination ul > li > a, .pagination ul > li > span {
+                        float: left;
+                        padding: 0 14px;
+                        line-height: 38px;
+                        text-decoration: none;
+                        background-color: #ffffff;
+                        border: 1px solid #dddddd;
+                        border-left-width: 0;
+                    }
+
+                .pagination ul > .active > a, .pagination ul > .active > span {
+                    color: #999999;
+                    cursor: default;
+                    background: gainsboro;
+                }
+
+        .gutter {
+            margin-right: 0px;
+            margin-left: 0px;
+        }
+
+        .container-fluid {
+            padding-right: 0px;
+            padding-left: 0px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        label {
+            display: inline-block;
+            max-width: 100%;
+            margin-bottom: 5px;
+            font-weight: 400;
+            font-size: 16px;
+        }
+
+        .center-text {
+            text-align: center !important;
+        }
+
+        .mandatoryicon {
+            height: 10px;
+            margin-top: -10px;
+        }
+    </style>
+
+    <style>
+
+        .required_image {
+            width: 8px !important;
+            height: 8px !important;
+            margin-top: -10px !important;
+        }
+
+        .btn-md-80 {
+            width: 90px !important;
+        }
+
+        .error {
+            color: red;
+            border-color: red;
+        }
+
+        .capitalize2 {
+            text-transform: capitalize;
+        }
+
+        .textarearemoveborder {
+            border: none;
+            overflow: auto;
+            outline: none;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+        }
+    </style>
+
+    <link href="~/Content/Timeline_New.css" rel="stylesheet" />
+
+    <link href="~/Scripts/ScrollBar/style.css" rel="stylesheet" />
+    <style>
+        #custom-search-input {
+            padding: 3px;
+            border: solid 1px #E4E4E4;
+            border-radius: 6px;
+            background-color: #fff;
+        }
+
+            #custom-search-input input {
+                border: 0;
+                box-shadow: none;
+            }
+
+            #custom-search-input button {
+                margin: 2px 0 0 0;
+                background: none;
+                box-shadow: none;
+                border: 0;
+                color: #666666;
+                padding: 0 8px 0 10px;
+                border-left: solid 1px #ccc;
+            }
+
+                #custom-search-input button:hover {
+                    border: 0;
+                    box-shadow: none;
+                    border-left: solid 1px #ccc;
+                }
+
+            #custom-search-input .glyphicon-search {
+                font-size: 23px;
+            }
+    </style>
+    <style>
+        .popover {
+            background: white;
+            color: black;
+            width: 200px;
+            border-radius: 3px;
+            border: 1px solid gray;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+
+            $('[data-toggle="popover"]').popover();
+        });
+    </script>
+
+    <style>
+        .package-table tbody tr:nth-child(odd) {
+            background: #f3f3f3;
+        }
+        /*.package-table td{border-top:0px !important; border-right:1px solid #fff !important;}*/
+        .package-table tbody tr:nth-child(even) {
+            background: #e8e8e8;
+        }
+
+        .disabled {
+            pointer-events: none;
+            /*opacity: 0.4;*/
+        }
+
+        .modal-xl {
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .skin-blue .sidebar-menu > li:hover > a, .skin-blue .sidebar-menu > li.active > a {
+            border-left-color: white !important;
+        }
+
+        .treeview-menu > li {
+            padding: 12px 0px;
+            border-bottom: 1px solid #f7e6c8;
+        }
+
+            .treeview-menu > li > a {
+                color: white !important
+            }
+
+                .treeview-menu > li > a > img {
+                    height: 24px;
+                    width: 24px;
+                }
+
+        .control-sidebar-menu > li {
+            border-bottom: 1px solid white;
+            padding: 0
+        }
+
+        .Modal-DatePicker {
+            z-index: 9999 !important;
+        }
+        .skin-blue .main-header .navbar {
+            background-color: #050021 !important;
+        }
+        .skin-blue .main-header .logo {
+            background-color: #050021 !important;
+            color: #fff;
+            border-bottom: 0 solid transparent;
+        }
+        .skin-blue .wrapper, .skin-blue .main-sidebar, .skin-blue .left-side {
+            background-color: #ccc !important;
+        }
+
+        .skin-blue .main-header li.user-header {
+            background-color: #ccc!important;
+        }
+        .header-bg {
+            background-color: #050021 !important;
+        }
+    </style>
+
+    <script type="text/javascript" language="javascript">
+        $(document).ready(function () {
+            var scroll_top_duration = 10;
+            $('body,html').animate({
+                scrollTop: 0,
+            }, scroll_top_duration
+            );
+
+        });
+    </script>
+
+    <script type="text/javascript">
+        var idleTime = 0;
+        $(document).ready(function () {
+
+            //$(".content-wrapper").css({"min-height":'500px !important'})
+            // jqvery
+            // add .disabled when you are done
+            $(".kiran_a").addClass('disabled');
+           // add .disabled when you are done
+
+            //Increment the idle time counter every minute.
+            var sessionvalue = '@Session["Health_$%#@_UserId"]';
+            if (sessionvalue != '') {
+                var idleInterval = setInterval('timerIncrement()', 60000); // 1 minute
+                //Zero the idle timer on mouse movement.
+                $(this).mousemove(function (e) {
+                    idleTime = 0;
+                });
+
+                $(this).keypress(function (e) {
+                    idleTime = 0;
+                });
+            }
+        });
+
+        function timerIncrement() {
+            idleTime++;
+            var sessionTime=@HttpContext.Current.Session.Timeout;
+            if (idleTime == sessionTime-1) { // 20 minutes
+                var pre = document.createElement('pre');
+                //custom style.
+                pre.style.maxHeight = "300px";
+                //pre.style.margin = "0";
+                //pre.style.padding = "24px";
+                pre.style.whiteSpace = "pre-wrap";
+                pre.style.textAlign = "justify";
+                pre.appendChild(document.createTextNode($('#la').text()));
+                //show as confirm
+                alertify.confirm("Session Timeout",pre, function () {
+                    window.location.href = "../HealthCare/MedicalQuestionnaire";
+                }, function () {
+                    window.location.href = "../Home/Logout";
+                }).set({ labels: { ok: 'Yes', cancel: 'No' }, padding: false });
+            }
+            else if(idleTime >=sessionTime)
+            {
+                window.location.href = "../Home/SessionOut";
+            }
+        }
+    </script>
+
+
+    <script src="~/AngularCntrls/CompanyCntrl.js"></script>
+    <script src="~/AngularCntrls/DashboardService.js"></script>
+    <script src="~/AngularCntrls/HomeCtrl.js"></script>
+</head>
+<body id="pagewrap" class="hold-transition skin-blue sidebar-mini" ng-app="GGBApp">
+
+    <div id="la" style="display:none;font-size:11pt!important;padding:20px">
+
+        You will be logged out in <h2>1</h2> minute! Do you want to stay signed in?
+
+    </div>
+    <div class="wrapper skin-blue" ng-controller="HomeCntrl">
+        <header class="main-header">
+            <a href="/" class="logo">
+                 @*mini logo for sidebar mini 50x50 pixels*@ 
+                <span class="logo-mini" style="font-size:10px"><img src="~/Images/Cimpleit_1.png" height="60" /></span>
+                @*<img src="~/Images/Cimpleit_1.png" />*@
+                 @*logo for regular state and mobile devices*@ 
+                <span class="logo-lg"><img src="~/Images/Cimpleit_1.png" height="60" /></span>
+            </a>
+            
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+                <a class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <i class="fa fa-align-justify"></i>
+                </a>
+                <div class="navbar-custom-menu">
+
+                    <ul class="nav navbar-nav">
+                        <li class="right-pane">
+                            <a style="padding: 0;" href="/"> <input type="button" value="Home" class="btn btn-ggb-orange" style="margin: 8px;"></a>
+                        </li>
+                        <li class="right-pane">
+                            <a style="padding: 0;" href="#"> <input type="button" value="Profile" class="btn btn-ggb-orange" style="margin: 8px;"></a>
+                        </li>
+                        <li class="right-pane">
+                            <a style="padding: 0;" href="#"> <input type="button" value="Controls" class="btn btn-ggb-orange" style="margin: 8px;"></a>
+                        </li>
+                        <li class="right-pane">
+                            <a style="padding: 0;" href="#"> <input type="button" value="Help" class="btn btn-ggb-orange" style="margin: 8px;"></a>
+                        </li>
+                        <li class="right-pane">
+                            <a style="padding: 0;" href="../Home/About"> <input type="button" value="Contract Page" class="btn btn-ggb-orange" style="margin: 8px;"></a>
+                        </li>
+                        @*<li class="right-pane">
+            <input type="reset" value="Plan / Schedule " class="btn btn-ggb-orange" style="margin: 8px;">
+        </li>*@
+                        <li class="dropdown user user-menu right-pane">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="border:0px solid red;height:50px">
+                                <img src="~/Images/user.png" class="user-image" alt="User Image" />
+
+                                <span class="hidden-xs"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- User image -->
+                                <li class="user-header">
+                                    <img src="~/Images/user.png" class="img-circle" alt="User Image" />
+
+                                    <p>
+                                        <b style="font-weight:100;text-transform:capitalize"> @Session["Health_$%#@_Admin"]</b> <div style="color:orange;font-weight:100">@Session["Health_$%#@_Admin"]</div>
+
+                                    </p>
+                                </li>
+
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href="../Home/" class="btn btn-primary btn-flat">Sign out</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Control Sidebar Toggle Button -->
+                        <li class="right-pane">
+                            <a href="#" data-toggle="control-sidebar"><i class="fa fa-align-justify"></i></a>
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar" style="background-color: #fff;">
+                <!-- Sidebar user panel -->
+                <a href="/">
+                    <div class="user-panel" style="background-color: #b0b0b0!important;cursor:pointer">
+                        <div class="pull-left image">
+                            <img src="~/Images/user.png" class="img-circle" style="width:120%" alt="GGB Image" />
+
+                        </div>
+                        <div class="pull-left info" style="text-transform:capitalize">
+                            <p>Demo User</p>
+                            <a href="#">
+                                <i class="fa fa-circle text-success"></i> Online
+                            </a>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="user-panel" style="background-color: white;cursor:pointer">
+                    <div class="small-box bg-yellow">
+                        <div class="col-md-12" style="padding: 0;">
+                            <p class="text-red" style="text-align: center;margin: 10px 0 0 0;font-size: 20px;font-weight: bold;">Attention needed</p>
+                            <div class="col-md-6" style="padding: 8px;padding-right: 4px;padding-bottom: 4px;padding-top: 0px;">
+                                <a href="../Dashboard/IndexNew" ng-click="dashboardTable('New')">
+                                    <div class="small-box header-bg" style="margin: 0;padding-top: 16px;padding-bottom: 16px;">
+                                        <div class="inner" style="text-align: center;">
+                                            <p style="font-size: 18px;margin: 0;">7</p>
+
+                                            <p style="margin: 0;font-size: 12px;">Alerts<br /></p>
+                                        </div>
+                                        <div class="icon">
+
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-6" style="padding: 8px;padding-left: 4px;padding-bottom: 4px;padding-top: 0;">
+                                <a href="../Dashboard/IndexNew" ng-click="dashboardTable('Recomendation')">
+                                    <div class="small-box header-bg" style="margin: 0;padding: 8px;">
+                                        <div class="inner" style="text-align: center;">
+                                            <p style="font-size: 18px;margin: 0;">20</p>
+
+                                            <p style="margin: 0;font-size: 12px;">Past Due<br /> Contracts</p>
+                                        </div>
+                                        <div class="icon">
+
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-6" style="padding: 8px;padding-right: 4px;padding-top: 4px;">
+                                <a href="../Dashboard/IndexNew" ng-click="dashboardTable('Issue')">
+                                    <div class="small-box header-bg" style="margin: 0;padding-top: 16px;padding-bottom: 16px;">
+                                        <div class="inner" style="text-align: center;">
+                                            <p style="font-size: 18px;margin: 0;">15</p>
+
+                                            <p style="margin: 0;font-size: 12px;">Advances Due <br /></p>
+                                        </div>
+                                        <div class="icon">
+
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-6" style="padding: 8px;padding-left: 4px;padding-top: 4px;">
+                                <a href="../Dashboard/IndexNew" ng-click="dashboardTable('SLA')">
+                                    <div class="small-box header-bg" style="margin: 0;padding: 8px;">
+                                        <div class="inner" style="text-align: center;">
+                                            <p style="font-size: 18px;margin: 0;">30</p>
+
+                                            <p style="margin: 0;font-size: 12px;">Additional<br /> Reminders</p>
+                                        </div>
+                                        <div class="icon">
+
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="sidebar-menu tree" data-widget="tree" style="background-color: #b0b0b0!important;">
+                    <li class="treeview">
+                        <a href="#" style="background: white;padding-bottom: 50px;">
+                            @*<i class="fa fa-folder"></i> <span>Examples</span>*@
+                            <span class="pull-right-container" style="background: #050021;padding: 10px 12px 9px 8px;">
+                                <i class="fa fa-align-justify pull-right"></i>
+                            </span>
+                        </a>
+                        <ul ng-if="leftMenu=='startup'" class="control-sidebar-menu treeview-menu" style="margin: 0; background-color: #050021;padding: 0;">
+                            <li class="right-pane-inv">
+                                <a class="right-pane-inv" href="javascript:void(0)">
+                                    <i class="menu-icon fa fa-user bg-green" style="width:32px;height:32px;line-height:32px"></i>
+
+                                    <div class="menu-info" style="padding:4px;">
+                                        <h4 class="control-sidebar-subheading">Key word Search</h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="right-pane-inv">
+                                <a class="right-pane-inv" href="javascript:void(0)">
+                                    <i class="menu-icon fa  fa-h-square bg-red" style="width:32px;height:32px;line-height:32px"></i>
+
+                                    <div class="menu-info" style="padding:4px;">
+                                        <h4 class="control-sidebar-subheading">Parties</h4>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li class="right-pane-inv">
+                                <a class="right-pane-inv" href="javascript:void(0)">
+                                    <i class="menu-icon fa  fa-transgender-alt bg-light-blue" style="width:32px;height:32px;line-height:32px"></i>
+
+                                    <div class="menu-info" style="padding:4px;">
+                                        <h4 class="control-sidebar-subheading">Contracts</h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="right-pane-inv">
+                                <a class="right-pane-inv" href="javascript:void(0)">
+                                    <i class="menu-icon fa fa-files-o bg-aqua-active" style="width:32px;height:32px;line-height:32px"></i>
+
+                                    <div class="menu-info" style="padding:4px;">
+                                        <h4 class="control-sidebar-subheading">Rules</h4>
+
+                                    </div>
+                                </a>
+                            </li>
+
+
+
+                            <li class="right-pane-inv">
+                                <a class="right-pane-inv" href="javascript:void(0)">
+                                    <i class="menu-icon fa  fa-line-chart bg-purple" style="width:32px;height:32px;line-height:32px"></i>
+
+                                    <div class="menu-info" style="padding:4px;">
+                                        <h4 class="control-sidebar-subheading">Products</h4>
+                                    </div>
+                                </a>
+                            </li>                           
+
+                        </ul>
+
+                        @*<ul ng-if="leftMenu=='service request console'" class="control-sidebar-menu treeview-menu" style="margin: 0; background-color: #050021;padding: 0;">
+                            <li class="right-pane-inv">
+                                <a class="right-pane-inv" href="javascript:void(0)">
+                                    <i class="menu-icon fa fa-user bg-green" style="width:32px;height:32px;line-height:32px"></i>
+
+                                    <div class="menu-info" style="padding:4px;">
+                                        <h4 class="control-sidebar-subheading">Company Details</h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="right-pane-inv">
+                                <a class="right-pane-inv" href="javascript:void(0)">
+                                    <i class="menu-icon fa  fa-h-square bg-red" style="width:32px;height:32px;line-height:32px"></i>
+
+                                    <div class="menu-info" style="padding:4px;">
+                                        <h4 class="control-sidebar-subheading">Personal Details</h4>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li class="right-pane-inv">
+                                <a class="right-pane-inv" href="javascript:void(0)">
+                                    <i class="menu-icon fa  fa-transgender-alt bg-light-blue" style="width:32px;height:32px;line-height:32px"></i>
+
+                                    <div class="menu-info" style="padding:4px;">
+                                        <h4 class="control-sidebar-subheading">Equipment Details</h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="right-pane-inv">
+                                <a class="right-pane-inv" href="javascript:void(0)">
+                                    <i class="menu-icon fa fa-files-o bg-aqua-active" style="width:32px;height:32px;line-height:32px"></i>
+
+                                    <div class="menu-info" style="padding:4px;">
+                                        <h4 class="control-sidebar-subheading">Documents</h4>
+
+                                    </div>
+                                </a>
+                            </li>
+
+
+
+                            <li class="right-pane-inv">
+                                <a class="right-pane-inv" href="javascript:void(0)">
+                                    <i class="menu-icon fa  fa-line-chart bg-purple" style="width:32px;height:32px;line-height:32px"></i>
+
+                                    <div class="menu-info" style="padding:4px;">
+                                        <h4 class="control-sidebar-subheading">Performance</h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="right-pane-inv">
+                                <a class="right-pane-inv" href="javascript:void(0)">
+                                    <i class="menu-icon fa  fa-file-image-o bg-maroon-active" style="width:32px;height:32px;line-height:32px"></i>
+
+                                    <div class="menu-info" style="padding:4px;">
+                                        <h4 class="control-sidebar-subheading">Reports</h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="right-pane-inv">
+                                <a class="right-pane-inv" href="javascript:void(0)">
+                                    <i class="menu-icon fa  fa-home bg-green-active" style="width:32px;height:32px;line-height:32px"></i>
+
+                                    <div class="menu-info" style="padding:4px;">
+                                        <h4 class="control-sidebar-subheading">Asset</h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="right-pane-inv">
+                                <a class="right-pane-inv" href="javascript:void(0)">
+                                    <i class="menu-icon fa  fa-money bg-purple-active" style="width:32px;height:32px;line-height:32px"></i>
+
+                                    <div class="menu-info" style="padding:4px;">
+                                        <h4 class="control-sidebar-subheading">Budget</h4>
+                                    </div>
+                                </a>
+                            </li>
+
+                        </ul>*@
+                    </li>
+
+                </ul>
+
+
+
+                @*<ul class="sidebar-menu tree" data-widget="tree" style="background-color: #050021;">
+                        <li class="treeview">
+                            <a href="#" style="background: white;padding-bottom: 50px;">
+                                <span class="pull-right-container" style="background: #050021;padding: 10px 12px 9px 8px;">
+                                    <i class="fa fa-align-justify pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu" style="background-color: #050021;padding-left:0">
+                                <li><a href="#"> <img src="~/Images/Picture1.png" /> Licensee Details</a></li>
+                                <li><a href="#"><i class="fa fa-circle-o"></i> Personal Details</a></li>
+                                <li><a href="#"><i class="fa fa-circle-o"></i> Equipment Details</a></li>
+                                <li><a href="#"><i class="fa fa-circle-o"></i> Documents</a></li>
+                                <li><a href="#"><i class="fa fa-circle-o"></i> Performance</a></li>
+                                <li><a href="#"><i class="fa fa-circle-o"></i> Reports</a></li>
+                                <li><a href="#"><i class="fa fa-circle-o"></i> Asset</a></li>
+                                <li><a href="#"><i class="fa fa-circle-o"></i> Blank Page</a></li>
+                                <li><a href="#"><i class="menu-icon fa fa-2x fa-money bg-purple-active"></i> Budget</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>*@
+            </section>
+
+            <!-- /.sidebar -->
+        </aside>
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper" style="background-color:white !important;">
+            <!-- Content Header (Page header) -->
+            <section class="content-header"></section>
+            <!-- Main content -->
+            <section class="content" style="padding-bottom: 2.5rem;margin-top:-40px!important">
+                @RenderBody()
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 9.5
+            </div>
+            <strong>Copyright &copy; 2019-2020 </strong> All rights
+            reserved.
+        </footer>
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <ul class="control-sidebar-menu" style="margin: 0; background-color: #7f1933;">
+                <li class="right-pane-inv" style="border-bottom: 1px solid #050021;">
+                    <a class="right-pane-inv" href="javascript:void(0)">
+                        <i class="menu-icon fa fa-2x fa-files-o bg-aqua-active"></i>
+
+                        <div class="menu-info" style="padding:10px;">
+                            <h4 class="control-sidebar-subheading">Documents</h4>
+
+                        </div>
+                    </a>
+                </li>
+                <li class="right-pane-inv" style="border-bottom: 1px solid #050021;">
+                    <a class="right-pane-inv" href="javascript:void(0)">
+                        <i class="menu-icon fa fa-2x fa-line-chart bg-green"></i>
+
+                        <div class="menu-info" style="padding:10px;">
+                            <h4 class="control-sidebar-subheading">Performance</h4>
+                        </div>
+                    </a>
+                </li>
+                <li class="right-pane-inv" style="border-bottom: 1px solid #050021;">
+                    <a class="right-pane-inv" href="javascript:void(0)">
+                        <i class="menu-icon fa fa-2x fa-h-square bg-red"></i>
+
+                        <div class="menu-info" style="padding:10px;">
+                            <h4 class="control-sidebar-subheading">Leave</h4>
+                        </div>
+                    </a>
+                </li>
+                <li class="right-pane-inv" style="border-bottom: 1px solid #050021;">
+                    <a class="right-pane-inv" href="javascript:void(0)">
+                        <i class="menu-icon fa fa-2x fa-transgender-alt bg-light-blue"></i>
+
+                        <div class="menu-info" style="padding:10px;">
+                            <h4 class="control-sidebar-subheading">Traning</h4>
+                        </div>
+                    </a>
+                </li>
+                <li class="right-pane-inv" style="border-bottom: 1px solid #050021;">
+                    <a class="right-pane-inv" href="javascript:void(0)">
+                        <i class="menu-icon fa fa-2x fa-plane bg-purple"></i>
+
+                        <div class="menu-info" style="padding:10px;">
+                            <h4 class="control-sidebar-subheading">Travel</h4>
+                        </div>
+                    </a>
+                </li>
+                <li class="right-pane-inv" style="border-bottom: 1px solid #050021;">
+                    <a class="right-pane-inv" href="javascript:void(0)">
+                        <i class="menu-icon fa fa-2x fa-cubes bg-maroon-active"></i>
+
+                        <div class="menu-info" style="padding:10px;">
+                            <h4 class="control-sidebar-subheading">Inventory</h4>
+                        </div>
+                    </a>
+                </li>
+                <li class="right-pane-inv" style="border-bottom: 1px solid #050021;">
+                    <a class="right-pane-inv" href="javascript:void(0)">
+                        <i class="menu-icon fa fa-2x fa-money bg-purple-active"></i>
+
+                        <div class="menu-info" style="padding:10px;">
+                            <h4 class="control-sidebar-subheading">Budget</h4>
+                        </div>
+                    </a>
+                </li>
+                <li class="right-pane-inv" style="border-bottom: 1px solid #050021;">
+                    <a class="right-pane-inv" href="javascript:void(0)">
+                        <i class="menu-icon fa fa-2x fa-home bg-green-active"></i>
+
+                        <div class="menu-info" style="padding:10px;">
+                            <h4 class="control-sidebar-subheading">Asset</h4>
+                        </div>
+                    </a>
+                </li>
+                <li class="right-pane-inv" style="border-bottom: 1px solid #050021;">
+                    <a class="right-pane-inv" href="javascript:void(0)">
+                        <i class="menu-icon fa fa-2x fa-bullhorn bg-light-blue"></i>
+
+                        <div class="menu-info" style="padding:10px;">
+                            <h4 class="control-sidebar-subheading">FM OPS</h4>
+                        </div>
+                    </a>
+                </li>
+                <li class="right-pane-inv" style="border-bottom: 1px solid #050021;">
+                    <a class="right-pane-inv" href="javascript:void(0)">
+                        <i class="menu-icon fa fa-2x fa-bug bg-maroon-active"></i>
+
+                        <div class="menu-info" style="padding:10px;">
+                            <h4 class="control-sidebar-subheading">Risk</h4>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="right-pane-inv" style="border-bottom: 1px solid #050021;">
+                    <a class="right-pane-inv" href="javascript:void(0)">
+                        <i class="menu-icon fa fa-2x fa-dollar bg-maroon-active"></i>
+
+                        <div class="menu-info" style="padding:10px;">
+                            <h4 class="control-sidebar-subheading">Remuneration</h4>
+                        </div>
+                    </a>
+                </li>
+                <li class="right-pane-inv" style="border-bottom: 1px solid #050021;">
+                    <a class="right-pane-inv" href="javascript:void(0)">
+                        <i class="menu-icon fa fa-2x fa-file-sound-o bg-maroon-active"></i>
+
+                        <div class="menu-info" style="padding:10px;">
+                            <h4 class="control-sidebar-subheading">Disciplinary</h4>
+                        </div>
+                    </a>
+                </li>
+                <li class="right-pane-inv" style="border-bottom: 1px solid #050021;">
+                    <a class="right-pane-inv" href="javascript:void(0)">
+                        <i class="menu-icon fa fa-2x fa-bank bg-maroon-active"></i>
+
+                        <div class="menu-info" style="padding:10px;">
+                            <h4 class="control-sidebar-subheading">Orginazation Structure</h4>
+                        </div>
+                    </a>
+                </li>
+                <li class="right-pane-inv" style="border-bottom: 1px solid #050021;">
+                    <a class="right-pane-inv" href="javascript:void(0)">
+                        <i class="menu-icon fa fa-2x fa-file-image-o bg-maroon-active"></i>
+
+                        <div class="menu-info" style="padding:10px;">
+                            <h4 class="control-sidebar-subheading">Reports</h4>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <!-- /.control-sidebar -->
+        <!-- Add the sidebar's background. This div must be placed
+        immediately after the control sidebar -->
+        <div class="control-sidebar-bg" style="background-color: #7f1933;"></div>
+    </div>
+    <!-- ./wrapper -->
+    <!-- jQuery 2.2.3 -->
+    <!-- Bootstrap 3.3.6 -->
+    <script src="../Content/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Select2 -->
+    <script src="../Content/plugins/select2/select2.full.min.js"></script>
+
+    <script src="../Content/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <!-- iCheck 1.0.1 -->
+    <script src="../Content/plugins/iCheck/icheck.min.js"></script>
+    <!-- FastClick -->
+    <script src="../Content/plugins/fastclick/fastclick.js"></script>
+
+
+    <!-- jQuery UI 1.11.4 -->
+    @*<script src="../bower_components/jquery-ui/jquery-ui.min.js"></script>*@
+
+    <!-- fullCalendar -->
+    <script src="../bower_components/moment/moment.js"></script>
+    <script src="~/bower_components/fullcalendar/fullcalendar.js"></script>
+    @*<script src="../bower_components/fullcalendar/dist/fullcalendar.min.js"></script>*@
+    <!-- AdminLTE App -->
+    <script src="../Content/dist/js/app.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../Content/dist/js/demo.js"></script>
+
+    <a href="#0" class="cd-top">Top</a>
+    <script src="~/Scripts/ScrollBar/main.js"></script>
+</body>
+</html>

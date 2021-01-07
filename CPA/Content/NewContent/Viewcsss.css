@@ -1,0 +1,60 @@
+﻿body {
+}
+.view1{
+    margin-top: 100px;
+     box-shadow: 0px 2px 6px 1px #333;
+     /*height:1000px;*/
+    margin-left:350px;
+   padding-left:30px;
+     width:700px;
+     margin-bottom:50px
+}
+#doctorforview
+        {
+           color:#46a1b4;
+           border:3px solid red;
+           width:1050px 
+        }
+.profview
+{
+    width:400px;
+}
+.profview1
+{
+    width:200px;
+}
+.Trprofileview
+{
+    height:30px;
+}
+.divheight
+{
+    min-height:600px;
+    max-height:1000px
+}
+
+@media only screen and (max-width : 840px)
+{
+.view1{
+    margin-top: 100px;
+     box-shadow: 0px 2px 6px 1px #333;
+     margin-left:2%;
+      margin-right:2%;
+     width:97%;
+     margin-bottom:50px
+}
+.profview
+{
+    width:95%;
+}
+.profview1
+{
+    width:95%;
+}
+.divheight
+{
+   min-height:400px;
+    max-height:1000px
+}
+
+}

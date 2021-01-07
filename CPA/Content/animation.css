@@ -1,0 +1,32 @@
+﻿.divinfo::before {
+            animation:shakeLeft 1s ease-in-out infinite;
+         }
+         .divinfo::after {
+             animation:shakeRight 1s ease-in-out infinite;
+         }
+        
+         @keyframes shakeLeft{
+             0%{
+                 transform:rotate(-50deg);
+             }
+            50% {
+            transform:rotate(-30deg);
+            }
+            100% {
+            transform:rotate(-50deg);
+            }
+                                }
+
+         @keyframes shakeRight{
+             0%{
+                 transform:rotate(50deg);
+             }
+            50% {
+            transform:rotate(30deg);
+            }
+            100% {
+            transform:rotate(50deg);
+            }
+                                }
+
+          
