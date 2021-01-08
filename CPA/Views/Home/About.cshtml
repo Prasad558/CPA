@@ -12,15 +12,15 @@
         border-top: 1px solid #ddd;
     }*/
     table.table-bordered {
-        border: 1px solid #050021;
+        border: 1px solid #8a8a8a;
     }
 
         table.table-bordered > thead > tr > td {
-            border: 1px solid #050021;
+            border: 1px solid #8a8a8a;
         }
 
         table.table-bordered > tbody > tr > td {
-            border: 1px solid #050021;
+            border: 1px solid #8a8a8a;
         }
 
     .tabs-rounded > ul > li > a {
@@ -29,6 +29,10 @@
         outline: none;
         color: white !important
     }
+
+    .panel-default {
+        border-color: #050021 !important;
+    }
 </style>
 <script src="~/AngularCntrls/dashboardCtrl.js?lmdt=201910300907"></script>
 <!-- Main content -->
@@ -36,92 +40,50 @@
 
     <div class="panel-group" style="margin-left: -25px;">
         <div class="panel panel-default" style="border: none">
-            <div class="panel-heading" style="background:#7f1933">
+            <div class="panel-heading" style="background:#050021">
                 <h4 class="panel-title">
                     <a data-toggle="collapse" ng-click="addIconCollapseServiceRequest()" data-parent="#accordionpatient" href="#collapse_search_1">
                         <span style="font-size: 12px;top: 0;" class="glyphicon glyphicon-minus"></span>
-                        General
+                        Contract
                     </a>
                 </h4>
             </div>
-            <div id="collapse_search_1" class="panel-collapse active in collapse" style="border: 1px solid #7f1933;">
+            <div id="collapse_search_1" class="panel-collapse active in collapse" style="border: 1px solid #050021;">
                 <div class="panel-body" style="padding: 0;">
 
                     <table width="100%">
                         <tr>
-                            <td style="width:  calc(100% / 6); ">
+                            <td style="width:  calc(100% / 4); ">
                                 <div style="width:100%;display: flex">
-                                    <div class="input-group" style="width: calc(40% - 2px);">
-
-                                        <input style=" border-radius: 4px" type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="SR ID" name="Licence">
-                                    </div>
-
-                                    <div class="input-group" style="width: 60%;left: 2px">
-
-                                        <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Relevance" name="Licence">
+                                    <div class="input-group" style="width: 100%;">
+                                        <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Business Unit" name="Licence">
                                         <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
                                             <i class="fa fa-ellipsis-h"></i>
                                         </span>
                                     </div>
                                 </div>
                             </td>
-                            <td style="width:  calc(100% / 6)">
+                            <td style="width:  calc(100% / 4)">
 
                                 <div class="input-group" style="width: 100%">
 
-                                    <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Company" name="Licence">
+                                    <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Contract Number" name="Licence">
                                     <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
                                         <i class="fa fa-ellipsis-h"></i>
                                     </span>
                                 </div>
                             </td>
-                            <td style="width:  calc(100% / 6)">
+                            <td style="width:  calc(100% / 4)">
 
                                 <div class="input-group" style="width: 100%">
 
-                                    <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Person" name="Licence">
+                                    <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Currency" name="Licence">
                                     <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
                                         <i class="fa fa-ellipsis-h"></i>
                                     </span>
                                 </div>
                             </td>
-                            <td style="width:  calc(100% / 6)">
-
-                                <div class="input-group" style="width: 100%">
-
-                                    <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Equipment" name="Licence">
-                                    <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
-                                        <i class="fa fa-ellipsis-h"></i>
-                                    </span>
-                                </div>
-                            </td>
-                            <td style="width:  calc(100% / 6)">
-
-
-                                <div class="input-group" style="width: 100%">
-
-                                    <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Licence" name="Licence">
-                                    <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
-                                        <i class="fa fa-ellipsis-h"></i>
-                                    </span>
-                                </div>
-                            </td>
-                            <td style="width:  calc(100% / 6)">
-
-                                <div class="input-group" style="width: 100%">
-
-                                    <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Location" name="Licence">
-                                    <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
-                                        <i class="fa fa-ellipsis-h"></i>
-                                    </span>
-                                </div>
-                            </td>
-
-
-                        </tr>
-
-                        <tr>
-                            <td style="width:  calc(100% / 6)">
+                            <td style="width:  calc(100% / 4)">
 
                                 <div class="input-group" style="width: 100%">
 
@@ -131,289 +93,203 @@
                                     </span>
                                 </div>
                             </td>
-                            <td style="width:  calc(100% / 6)">
-
-                                <div class="input-group" style="width: 100%">
-
-                                    <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="SLA Status" name="Licence">
-                                    <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
-                                        <i class="fa fa-ellipsis-h"></i>
-                                    </span>
-                                </div>
-                            </td>
-                            <td style="width:  calc(100% / 6)">
-
-                                <div class="input-group" style="width: 100%">
-
-                                    <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Requested By" name="Licence">
-                                    <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
-                                        <i class="fa fa-ellipsis-h"></i>
-                                    </span>
-                                </div>
-                            </td>
-                            <td style="width:  calc(100% / 6)">
-
-                                <div class="input-group" style="width: 100%">
-
-                                    <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Created By" name="Licence">
-                                    <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
-                                        <i class="fa fa-ellipsis-h"></i>
-                                    </span>
-                                </div>
-                            </td>
-                            <td style="width:  calc(100% / 6)">
-
-                                <div class="input-group" style="width: 100%">
-
-                                    <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Closed By" name="Licence">
-                                    <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
-                                        <i class="fa fa-ellipsis-h"></i>
-                                    </span>
-                                </div>
-                            </td>
-                            <td style="width:  calc(100% / 6)">
-
-                                <div class="input-group" style="width: 100%">
-
-                                    <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Employee Cost Centre" name="Licence">
-                                    <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
-                                        <i class="fa fa-ellipsis-h"></i>
-                                    </span>
-                                </div>
-                            </td>
-
-
-
                         </tr>
-
-
                         <tr>
-
-                            <td style="width:  calc(100% / 6)">
-
-                                <div class="input-group" style="width: 100%">
-
-                                    <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Service Category" name="Licence">
-                                    <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
-                                        <i class="fa fa-ellipsis-h"></i>
-                                    </span>
-                                </div>
-                            </td>
-                            <td style="width:  calc(100% / 6)">
-
-                                <div class="input-group" style="width: 100%">
-
-                                    <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Department" name="Licence">
-                                    <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
-                                        <i class="fa fa-ellipsis-h"></i>
-                                    </span>
-                                </div>
-                            </td>
-                            <td style="width:  calc(100% / 6)">
-
-                                <div class="input-group" style="width: 100%">
-
-                                    <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Sub-capability" name="Licence">
-                                    <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
-                                        <i class="fa fa-ellipsis-h"></i>
-                                    </span>
-                                </div>
-                            </td>
-                            <td style="width:  calc(100% / 6)">
-
-                                <div class="input-group" style="width: 100%">
-
-                                    <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Service Type" name="Licence">
-                                    <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
-                                        <i class="fa fa-ellipsis-h"></i>
-                                    </span>
-                                </div>
-                            </td>
-                            <td style="width:  calc(100% / 6)" colspan="2">
-
-
-                                <div class="input-group" style="width: 100%">
-
-                                    <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Service" name="Licence">
-                                    <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
-                                        <i class="fa fa-ellipsis-h"></i>
-                                    </span>
-                                </div>
-                            </td>
-
-
-
-                        </tr>
-
-
-                        <tr>
-                            <td colspan="6">
-
-                                <div class="input-group" style="width: 100%">
-
-                                    <textarea class="form-control" style="border-radius:4px" placeholder="Description" name="Licence"></textarea>
-
-                                </div>
-                            </td>
-
-
-                        </tr>
-
-                        <tr>
-
-                            <td colspan="6">
-
+                            <td style="width:  calc(100% / 4); ">
                                 <div style="width:100%;display: flex">
-                                    <div class="input-group" style="width:  calc(100% / 8);padding-right:3px">
-                                        <input datepicker1 style=" border-radius: 4px" type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Date Created" name="Licence">
+                                    <div class="input-group" style="width: 100%;">
+                                        <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Enter Party ( .. New Party)" name="Licence">
+                                        <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
+                                            <i class="fa fa-ellipsis-h"></i>
+                                        </span>
                                     </div>
-                                    <div class="input-group" style="width:  calc(100% / 8);padding-left:3px;padding-right:3px">
-                                        <input datepicker1 style=" border-radius: 4px" type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Date Requested" name="Licence">
-                                    </div>
-                                    <div class="input-group" style="width:  calc(100% / 8);padding-left:3px;padding-right:3px">
-                                        <input datepicker1 style=" border-radius: 4px" type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Start Date" name="Licence">
-                                    </div>
-                                    <div class="input-group" style="width:  calc(100% / 8);padding-left:3px;padding-right:3px">
-                                        <input datepicker1 style=" border-radius: 4px" type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="SLA End Date" name="Licence">
-                                    </div>
-                                    <div class="input-group" style="width:  calc(100% / 8);padding-left:3px;padding-right:3px">
-                                        <input datepicker1 style=" border-radius: 4px" type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Mutually Agreed Date" name="Licence">
-                                    </div>
-                                    <div class="input-group" style="width:  calc(100% / 8);padding-left:3px;padding-right:3px">
-                                        <input datepicker1 style=" border-radius: 4px" type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Date Closed" name="Licence">
-                                    </div>
-                                    <div class="input-group" style="width:  calc(100% / 8);padding-left:3px;padding-right:3px">
-                                        <input style=" border-radius: 4px" type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Escalation Indicator" name="Licence">
-                                    </div>
-                                    <div class="input-group" style="width:  calc(100% / 8);padding-left:3px;">
-                                        <input datepicker1 style=" border-radius: 4px" type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Escalation Date" name="Licence">
-                                    </div>
-
-
                                 </div>
                             </td>
-
-
-
-                        </tr>
-
-                        <tr>
-
-                            <td>
+                            <td style="width:  calc(100% / 4)">
 
                                 <div class="input-group" style="width: 100%">
 
-                                    <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Priority" name="Licence">
+                                    <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Contract Type" name="Licence">
                                     <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
                                         <i class="fa fa-ellipsis-h"></i>
                                     </span>
                                 </div>
                             </td>
-                            <td colspan="5">
+                            <td style="width:  calc(100% / 4)">
 
-                                <div class="input-group" style="width: 100%;">
+                                <div class="input-group" style="width: 100%">
 
-                                    <input style="border-radius:4px" type="text" class="form-control" placeholder="Priority Motivation" name="Licence">
+                                    <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Country" name="Licence">
+                                    <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
+                                        <i class="fa fa-ellipsis-h"></i>
+                                    </span>
+                                </div>
+                            </td>
+                            <td style="width:  calc(100% / 4)">
 
+                                <div class="input-group" style="width: 100%">
+
+                                    <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Revision" name="Licence">
+                                    <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
+                                        <i class="fa fa-ellipsis-h"></i>
+                                    </span>
                                 </div>
                             </td>
                         </tr>
+                        <tr>
+                            <td style="width:  calc(100% / 4); ">
+                                <div style="width:100%;display: flex">
+                                    <div class="input-group" style="width: 100%;">
+                                        <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Party#" name="Licence">
+                                        <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
+                                            <i class="fa fa-ellipsis-h"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="width:  calc(100% / 4)">
 
+                                <div class="input-group" style="width: 100%">
+
+                                    <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="License IP type" name="Licence">
+                                    <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
+                                        <i class="fa fa-ellipsis-h"></i>
+                                    </span>
+                                </div>
+                            </td>
+                            <td style="width:  calc(100% / 4)">
+
+                                <div class="input-group" style="width: 100%">
+
+                                    <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Group" name="Licence">
+                                    <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
+                                        <i class="fa fa-ellipsis-h"></i>
+                                    </span>
+                                </div>
+                            </td>
+                            <td style="width:  calc(100% / 4)">
+
+                                <div class="input-group" style="width: 100%">
+
+                                    <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Hold" name="Licence">
+                                    <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
+                                        <i class="fa fa-ellipsis-h"></i>
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:  calc(100% / 4); ">
+                                <div style="width:100%;display: flex">
+                                    <div class="input-group" style="width: 100%;">
+                                        <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Generate Contract Documents [B]" name="Licence">
+                                        <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
+                                            <i class="fa fa-ellipsis-h"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="width:  calc(100% / 4)">
+
+                                <div class="input-group" style="width: 100%">
+
+                                    <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Contract Date" name="Licence">
+                                    <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
+                                        <i class="fa fa-ellipsis-h"></i>
+                                    </span>
+                                </div>
+                            </td>
+                            <td style="width:  calc(100% / 4)">
+
+                                <div class="input-group" style="width: 100%">
+
+                                    <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="To" name="Licence">
+                                    <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
+                                        <i class="fa fa-ellipsis-h"></i>
+                                    </span>
+                                </div>
+                            </td>
+                            <td style="width:  calc(100% / 4)">
+
+                                <div class="input-group" style="width: 100%">
+
+                                    <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Approval Stage" name="Licence">
+                                    <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
+                                        <i class="fa fa-ellipsis-h"></i>
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:  calc(100% / 4); ">
+                                <div style="width:100%;display: flex">
+                                    <div class="input-group" style="width: 100%;">
+                                        <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Sell Of Date Contract Documents [B]" name="Licence">
+                                        <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
+                                            <i class="fa fa-ellipsis-h"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
                     </table>
                 </div>
 
             </div>
         </div>
-
-
     </div>
-
     <div class="panel-group" style="margin-left: -25px;">
         <div class="panel panel-default" style="border: none">
-            <div class="panel-heading" style="background:#7f1933">
+            <div class="panel-heading" style="background:#050021">
                 <h4 class="panel-title">
                     <a data-toggle="collapse" ng-click="addIconCollapseServiceRequest()" data-parent="#accordionpatient" href="#collapse_steplog_1">
                         <span style="font-size: 12px;top: 0;" class="glyphicon glyphicon-minus"></span>
-                        Step Log
+                        Additional Header Information
                     </a>
                 </h4>
             </div>
-            <div id="collapse_steplog_1" class="panel-collapse active in collapse" style="border: 1px solid #7f1933;">
+            <div id="collapse_steplog_1" class="panel-collapse active in collapse" style="border: 1px solid #050021;">
                 <div class="panel-body" style="padding: 2px;">
 
-                    <table class="table table-bordered tabel-condensed" style="margin-bottom:0">
-                        <thead style="background-color:#050021 !important;border-collapse:collapse;white-space:nowrap; font-size:14px;color:#fff !important">
-                            <tr>
+                    <table width="100%">
+                        <tr>
+                            <td style="width:  calc(100% / 3); ">
+                                <div style="width:100%;display: flex">
+                                    Contract Signed By:
+                                </div>
+                            </td>
+                            <td style="width:  calc(100% / 3)">
 
-                                <td style="width:calc(100% / 11)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">Status Change Date</a>&nbsp;</td>
-                                <td style="width:calc(100% / 11)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">Status Change Time</a>&nbsp;</td>
-                                <td style="width:calc(100% / 11)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">Status Before</a>&nbsp;</td>
-                                <td style="width:calc(100% / 11)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">Status After</a>&nbsp;</td>
-                                <td style="width:calc(100% / 11)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">Business Role</a>&nbsp;</td>
-                                <td style="width:calc(100% / 11)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">Assigned To</a>&nbsp;</td>
-                                <td style="width:calc(100% / 11)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">Responded By</a>&nbsp;</td>
-                                <td style="width:calc(100% / 11)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">Date Responded</a>&nbsp;</td>
-                                <td style="width:calc(calc(100% / 11)*3)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">Comment</a>&nbsp;</td>
+                                <div class="input-group" style="width: 100%">
 
-                            </tr>
-                        </thead>
+                                    Contract Reference:
+                                </div>
+                            </td>
+                            <td style="width:  calc(100% / 3)">
 
-                        <tbody>
+                                <div class="input-group" style="width: 100%">
+                                    Insurance certificate Number:
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: calc(calc(100% / 3) *2); " colspan="2">
+                                <div style="width:100%;display: flex">
+                                    <div class="input-group" style="width: 100%;">
+                                        <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Notes" name="Licence">
+                                        <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
+                                            <i class="fa fa-ellipsis-h"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="width:  calc(100% / 3)">
 
-                            <tr>
-
-                                <td style="width:calc(100% / 11)"></td>
-                                <td style="width:calc(100% / 11)"></td>
-                                <td style="width:calc(100% / 11)"></td>
-                                <td style="width:calc(100% / 11)"></td>
-                                <td style="width:calc(100% / 11)"></td>
-                                <td style="width:calc(100% / 11)"></td>
-                                <td style="width:calc(100% / 11)"></td>
-                                <td style="width:calc(100% / 11)"></td>
-                                <td style="width:calc(calc(100% / 11)*3)"></td>
-
-                            </tr>
-                            <tr>
-
-                                <td style="width:calc(100% / 11)"></td>
-                                <td style="width:calc(100% / 11)"></td>
-                                <td style="width:calc(100% / 11)"></td>
-                                <td style="width:calc(100% / 11)"></td>
-                                <td style="width:calc(100% / 11)"></td>
-                                <td style="width:calc(100% / 11)"></td>
-                                <td style="width:calc(100% / 11)"></td>
-                                <td style="width:calc(100% / 11)"></td>
-                                <td style="width:calc(calc(100% / 11)*3)"></td>
-
-                            </tr>
-                            <tr>
-
-                                <td style="width:calc(100% / 11)"></td>
-                                <td style="width:calc(100% / 11)"></td>
-                                <td style="width:calc(100% / 11)"></td>
-                                <td style="width:calc(100% / 11)"></td>
-                                <td style="width:calc(100% / 11)"></td>
-                                <td style="width:calc(100% / 11)"></td>
-                                <td style="width:calc(100% / 11)"></td>
-                                <td style="width:calc(100% / 11)"></td>
-                                <td style="width:calc(calc(100% / 11)*3)"></td>
-
-                            </tr>
-                            <tr>
-
-                                <td style="width:calc(100% / 11)"></td>
-                                <td style="width:calc(100% / 11)"></td>
-                                <td style="width:calc(100% / 11)"></td>
-                                <td style="width:calc(100% / 11)"></td>
-                                <td style="width:calc(100% / 11)"></td>
-                                <td style="width:calc(100% / 11)"></td>
-                                <td style="width:calc(100% / 11)"></td>
-                                <td style="width:calc(100% / 11)"></td>
-                                <td style="width:calc(calc(100% / 11)*3)"></td>
-
-                            </tr>
-                        </tbody>
-
+                                <div class="input-group" style="width: 100%">
+                                    Legal Status:
+                                </div>
+                            </td>
+                        </tr>
                     </table>
 
                 </div>
@@ -426,13 +302,14 @@
 
     <div class="tabs-rounded" style="background-color:white;margin-left: -25px;">
         <ul class="nav nav-tabs" style="font-size:12px;border-bottom:0 !important">
-            <li class="active"><a href="#General" data-toggle="tab">Documents</a></li>
-            <li><a href="#AuditLog" data-toggle="tab">Futher Details</a></li>
-            <li><a href="#Documents" data-toggle="tab">Communications</a></li>
-            <li><a href="#Communication" data-toggle="tab">Checklist</a></li>
-            <li><a href="#Finding" data-toggle="tab">Finding Details</a></li>
-            <li><a href="#Recommendation" data-toggle="tab">Recommendations</a></li>
-            <li><a href="#Case" data-toggle="tab">Case Details</a></li>
+            <li class="active"><a href="#General" data-toggle="tab">Contract Details Lines</a></li>
+            <li><a href="#AuditLog" data-toggle="tab">Agreement Rules</a></li>
+            <li><a href="#Advances" data-toggle="tab">Advances/Guarantees</a></li>
+            <li><a href="#Communication" data-toggle="tab">Contacts</a></li>
+            <li><a href="#Finding" data-toggle="tab">Payee's</a></li>
+            <li><a href="#Recommendation" data-toggle="tab">Payments</a></li>
+            <li><a href="#Case" data-toggle="tab">Additional Rules</a></li>
+            <li><a href="#Documents" data-toggle="tab">Documents</a></li>
         </ul>
         <div id="myTabContent" class="tab-content">
 
@@ -440,70 +317,21 @@
                 <div class="panel-group">
                     <div class="panel panel-default">
                         <div class="panel-body" style="overflow:auto;padding:4px">
-                            <table width="100%">
-                                <tr>
-
-                                    <td style="width:  calc(100% / 5)">
-
-                                        <div class="input-group" style="width: 100%">
-
-                                            <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Privacy Indicator" name="Licence">
-                                            <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
-                                                <i class="fa fa-ellipsis-h"></i>
-                                            </span>
-                                        </div>
-                                    </td>
-                                    <td style="width:  calc(100% / 5)">
-
-                                        <div class="input-group" style="width: 100%">
-
-                                            <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Category" name="Licence">
-                                            <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
-                                                <i class="fa fa-ellipsis-h"></i>
-                                            </span>
-                                        </div>
-                                    </td>
-                                    <td style="width:  calc(100% / 5)">
-
-                                        <div class="input-group" style="width: 100%">
-
-                                            <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Type" name="Licence">
-                                            <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
-                                                <i class="fa fa-ellipsis-h"></i>
-                                            </span>
-                                        </div>
-                                    </td>
-                                    <td style="width:  calc(100% / 5)">
-
-                                        <div class="input-group" style="width: 100%">
-
-                                            <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Status" name="Licence">
-                                            <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
-                                                <i class="fa fa-ellipsis-h"></i>
-                                            </span>
-                                        </div>
-                                    </td>
-                                    <td style="width:  calc(100% / 5);text-align:right">
-                                        <button class="btn btn-ggb-orange">Add</button>
-                                        <button class="btn btn-ggb-orange">Clear</button>
-                                        <button class="btn btn-ggb-orange">Filter</button>
-                                    </td>
-
-
-                                </tr>
-                            </table>
 
                             <table class="table table-bordered tabel-condensed" style="margin-bottom:0">
-                                <thead style="background-color:#050021 !important;border-collapse:collapse;white-space:nowrap; font-size:14px;color:#fff !important">
+                                <thead style="background-color:#8a8a8a !important;border-collapse:collapse;white-space:nowrap; font-size:14px;color:#fff !important">
                                     <tr>
 
-                                        <td style="width:calc(100% / 9)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">Document Name</a>&nbsp;</td>
+                                        <td style="width:calc(100% / 9)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">Product Num (Item Num)</a>&nbsp;</td>
+                                        <td style="width:calc(100% / 9)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">Description</a>&nbsp;</td>
                                         <td style="width:calc(100% / 9)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">Category</a>&nbsp;</td>
-                                        <td style="width:calc(100% / 9)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">Type</a>&nbsp;</td>
-                                        <td style="width:calc(100% / 9)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">Document Name</a>&nbsp;</td>
-                                        <td style="width:calc(100% / 9)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">Privacy Indicator</a>&nbsp;</td>
-                                        <td style="width:calc(100% / 9)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">Status</a>&nbsp;</td>
-                                        <td style="width:calc(calc(100% / 11)*3)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">URL</a>&nbsp;</td>
+                                        <td style="width:calc(100% / 9)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">IP</a>&nbsp;</td>
+                                        <td style="width:calc(100% / 9)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">Start Date</a>&nbsp;</td>
+                                        <td style="width:calc(100% / 9)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">End Date</a>&nbsp;</td>
+                                        <td style="width:calc(100% / 9)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">Calculation Method</a>&nbsp;</td>
+
+                                        <td style="width:calc(100% / 9)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">Calulation amount</a>&nbsp;</td>
+                                        <td style="width:calc(calc(100% / 9)*3)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href=""></a>&nbsp;</td>
 
                                     </tr>
                                 </thead>
@@ -511,48 +339,48 @@
                                 <tbody>
 
                                     <tr>
-
-                                        <td style="width:calc(100% / 9)"></td>
-                                        <td style="width:calc(100% / 9)"></td>
-                                        <td style="width:calc(100% / 9)"></td>
-                                        <td style="width:calc(100% / 9)"></td>
-                                        <td style="width:calc(100% / 9)"></td>
-                                        <td style="width:calc(100% / 9)"></td>
-                                        <td style="width:calc(calc(100% / 11)*3)"></td>
-
+                                        <td style="width:calc(100% / 9)">B001234</td>
+                                        <td style="width:calc(100% / 9)">Spider Man Shoes</td>
+                                        <td style="width:calc(100% / 9)">Shoes.Superhero</td>
+                                        <td style="width:calc(100% / 9)">Spiderman character</td>
+                                        <td style="width:calc(100% / 9)">01-01-2021</td>
+                                        <td style="width:calc(100% / 9)">31-12-2023</td>
+                                        <td style="width:calc(100% / 9)">Per Unit percent</td>
+                                        <td style="width:calc(100% / 9)">1.2%</td>
+                                        <td style="width:calc(calc(100% / 9)*3)"><a>Additional Rules</a></td>
                                     </tr>
                                     <tr>
-
-                                        <td style="width:calc(100% / 9)"></td>
-                                        <td style="width:calc(100% / 9)"></td>
-                                        <td style="width:calc(100% / 9)"></td>
-                                        <td style="width:calc(100% / 9)"></td>
-                                        <td style="width:calc(100% / 9)"></td>
-                                        <td style="width:calc(100% / 9)"></td>
-                                        <td style="width:calc(calc(100% / 11)*3)"></td>
-
+                                        <td style="width:calc(100% / 9)">B001235</td>
+                                        <td style="width:calc(100% / 9)">Spider Man Shoes</td>
+                                        <td style="width:calc(100% / 9)">Shoes.Superhero</td>
+                                        <td style="width:calc(100% / 9)">Spiderman character</td>
+                                        <td style="width:calc(100% / 9)">01-01-2021</td>
+                                        <td style="width:calc(100% / 9)">31-12-2023</td>
+                                        <td style="width:calc(100% / 9)">Per Unit percent</td>
+                                        <td style="width:calc(100% / 9)">1.2%</td>
+                                        <td style="width:calc(calc(100% / 9)*3)"><a>Additional Rules</a></td>
                                     </tr>
                                     <tr>
-
-                                        <td style="width:calc(100% / 9)"></td>
-                                        <td style="width:calc(100% / 9)"></td>
-                                        <td style="width:calc(100% / 9)"></td>
-                                        <td style="width:calc(100% / 9)"></td>
-                                        <td style="width:calc(100% / 9)"></td>
-                                        <td style="width:calc(100% / 9)"></td>
-                                        <td style="width:calc(calc(100% / 11)*3)"></td>
-
+                                        <td style="width:calc(100% / 9)">B001236</td>
+                                        <td style="width:calc(100% / 9)">Spider Man Shoes</td>
+                                        <td style="width:calc(100% / 9)">Shoes.Superhero</td>
+                                        <td style="width:calc(100% / 9)">Spiderman character</td>
+                                        <td style="width:calc(100% / 9)">01-01-2021</td>
+                                        <td style="width:calc(100% / 9)">31-12-2023</td>
+                                        <td style="width:calc(100% / 9)">Per Unit percent</td>
+                                        <td style="width:calc(100% / 9)">1.2%</td>
+                                        <td style="width:calc(calc(100% / 9)*3)"><a>Additional Rules</a></td>
                                     </tr>
                                     <tr>
-
-                                        <td style="width:calc(100% / 9)"></td>
-                                        <td style="width:calc(100% / 9)"></td>
-                                        <td style="width:calc(100% / 9)"></td>
-                                        <td style="width:calc(100% / 9)"></td>
-                                        <td style="width:calc(100% / 9)"></td>
-                                        <td style="width:calc(100% / 9)"></td>
-                                        <td style="width:calc(calc(100% / 11)*3)"></td>
-
+                                        <td style="width:calc(100% / 9)">B001237</td>
+                                        <td style="width:calc(100% / 9)">Spider Man Shoes</td>
+                                        <td style="width:calc(100% / 9)">Shoes.Superhero</td>
+                                        <td style="width:calc(100% / 9)">Spiderman character</td>
+                                        <td style="width:calc(100% / 9)">01-01-2021</td>
+                                        <td style="width:calc(100% / 9)">31-12-2023</td>
+                                        <td style="width:calc(100% / 9)">Per Unit percent</td>
+                                        <td style="width:calc(100% / 9)">1.2%</td>
+                                        <td style="width:calc(calc(100% / 9)*3)"><a>Additional Rules</a></td>
                                     </tr>
                                 </tbody>
 
@@ -565,137 +393,150 @@
                 <div class="panel-group">
                     <div class="panel panel-default">
                         <div class="panel-body" style="overflow:auto;padding:4px;min-height:170px">
-
+                            <table class="table table-bordered tabel-condensed" style="margin-bottom:0">
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                 </div>
 
             </div>
-            <div class="tab-pane" id="Documents">
+            <div class="tab-pane" id="Advances">
                 <div class="panel-group">
                     <div class="panel panel-default">
                         <div class="panel-body" style="overflow:auto;padding:4px">
-                            <table width="100%">
-                                <tr>
-
-                                    <td style="width:  calc(100% / 5)">
-
-                                        <div class="input-group" style="width: 100%">
-
-                                            <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Privacy Indicator" name="Licence">
-                                            <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
-                                                <i class="fa fa-ellipsis-h"></i>
-                                            </span>
-                                        </div>
-                                    </td>
-                                    <td style="width:  calc(100% / 5)">
-
-                                        <div class="input-group" style="width: 100%">
-
-                                            <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Category" name="Licence">
-                                            <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
-                                                <i class="fa fa-ellipsis-h"></i>
-                                            </span>
-                                        </div>
-                                    </td>
-                                    <td style="width:  calc(100% / 5)">
-
-                                        <div class="input-group" style="width: 100%">
-
-                                            <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Type" name="Licence">
-                                            <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
-                                                <i class="fa fa-ellipsis-h"></i>
-                                            </span>
-                                        </div>
-                                    </td>
-                                    <td style="width:  calc(100% / 5)">
-
-                                        <div class="input-group" style="width: 100%">
-
-                                            <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Status" name="Licence">
-                                            <span class="input-group-addon" style="border-top-left-radius: 0;border-bottom-left-radius: 0;padding-bottom: 0;padding-top: 12px;">
-                                                <i class="fa fa-ellipsis-h"></i>
-                                            </span>
-                                        </div>
-                                    </td>
-                                    <td style="width:  calc(100% / 5);text-align:right">
-                                        <button class="btn btn-ggb-orange">Add</button>
-                                        <button class="btn btn-ggb-orange">Clear</button>
-                                        <button class="btn btn-ggb-orange">Filter</button>
-                                    </td>
-
-
-                                </tr>
-                            </table>
-
                             <table class="table table-bordered tabel-condensed" style="margin-bottom:0">
-                                <thead style="background-color:#050021 !important;border-collapse:collapse;white-space:nowrap; font-size:14px;color:#fff !important">
-                                    <tr>
-
-                                        <td style="width:calc(100% / 10)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">Subject</a>&nbsp;</td>
-                                        <td style="width:calc(100% / 10)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">Category</a>&nbsp;</td>
-                                        <td style="width:calc(100% / 10)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">Type</a>&nbsp;</td>
-                                        <td style="width:calc(100% / 10)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">Autor</a>&nbsp;</td>
-                                        <td style="width:calc(100% / 10)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">Contact Details</a>&nbsp;</td>
-                                        <td style="width:calc(100% / 10)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">Privacy Indicator</a>&nbsp;</td>
-                                        <td style="width:calc(100% / 10)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">Status</a>&nbsp;</td>
-                                        <td style="width:calc(calc(100% / 11)*3)" ng-click="sort('NAME')" ng-class="sortClass('NAME')"><a class="anchor_sorting" href="">Description</a>&nbsp;</td>
-
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-
-                                    <tr>
-
-                                        <td style="width:calc(100% / 10)"></td>
-                                        <td style="width:calc(100% / 10)"></td>
-                                        <td style="width:calc(100% / 10)"></td>
-                                        <td style="width:calc(100% / 10)"></td>
-                                        <td style="width:calc(100% / 10)"></td>
-                                        <td style="width:calc(100% / 10)"></td>
-                                        <td style="width:calc(100% / 10)"></td>
-                                        <td style="width:calc(calc(100% / 11)*3)"></td>
-
-                                    </tr>
-                                    <tr>
-
-                                        <td style="width:calc(100% / 10)"></td>
-                                        <td style="width:calc(100% / 10)"></td>
-                                        <td style="width:calc(100% / 10)"></td>
-                                        <td style="width:calc(100% / 10)"></td>
-                                        <td style="width:calc(100% / 10)"></td>
-                                        <td style="width:calc(100% / 10)"></td>
-                                        <td style="width:calc(100% / 10)"></td>
-                                        <td style="width:calc(calc(100% / 11)*3)"></td>
-
-                                    </tr>
-                                    <tr>
-
-                                        <td style="width:calc(100% / 10)"></td>
-                                        <td style="width:calc(100% / 10)"></td>
-                                        <td style="width:calc(100% / 10)"></td>
-                                        <td style="width:calc(100% / 10)"></td>
-                                        <td style="width:calc(100% / 10)"></td>
-                                        <td style="width:calc(100% / 10)"></td>
-                                        <td style="width:calc(100% / 10)"></td>
-                                        <td style="width:calc(calc(100% / 11)*3)"></td>
-
-                                    </tr>
-                                    <tr>
-
-                                        <td style="width:calc(100% / 10)"></td>
-                                        <td style="width:calc(100% / 10)"></td>
-                                        <td style="width:calc(100% / 10)"></td>
-                                        <td style="width:calc(100% / 10)"></td>
-                                        <td style="width:calc(100% / 10)"></td>
-                                        <td style="width:calc(100% / 10)"></td>
-                                        <td style="width:calc(100% / 10)"></td>
-                                        <td style="width:calc(calc(100% / 11)*3)"></td>
-
-                                    </tr>
-                                </tbody>
-
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
                             </table>
 
                         </div>
@@ -706,7 +547,74 @@
                 <div class="panel-group">
                     <div class="panel panel-default">
                         <div class="panel-body" style="overflow:auto;padding:4px;min-height:170px">
-
+                            <table class="table table-bordered tabel-condensed" style="margin-bottom:0">
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -715,7 +623,74 @@
                 <div class="panel-group">
                     <div class="panel panel-default">
                         <div class="panel-body" style="overflow:auto;padding:4px;min-height:170px">
-
+                            <table class="table table-bordered tabel-condensed" style="margin-bottom:0">
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -724,7 +699,74 @@
                 <div class="panel-group">
                     <div class="panel panel-default">
                         <div class="panel-body" style="overflow:auto;padding:4px;min-height:170px">
-
+                            <table class="table table-bordered tabel-condensed" style="margin-bottom:0">
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -733,7 +775,74 @@
                 <div class="panel-group">
                     <div class="panel panel-default">
                         <div class="panel-body" style="overflow:auto;padding:4px;min-height:170px">
-
+                            <table class="table table-bordered tabel-condensed" style="margin-bottom:0">
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -742,7 +851,150 @@
                 <div class="panel-group">
                     <div class="panel panel-default">
                         <div class="panel-body" style="overflow:auto;padding:4px;min-height:170px">
-
+                            <table class="table table-bordered tabel-condensed" style="margin-bottom:0">
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="Documents">
+                <div class="panel-group">
+                    <div class="panel panel-default">
+                        <div class="panel-body" style="overflow:auto;padding:4px;min-height:170px">
+                            <table class="table table-bordered tabel-condensed" style="margin-bottom:0">
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                 </div>

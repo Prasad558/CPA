@@ -69,8 +69,8 @@ body {
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
     color: #fff;
     cursor: default;
-    background-color: #7f1933;
-    border: 1px solid #ddd;
+    background-color: #df4645;
+    border: 1px solid #df4645;
     border-bottom-color: transparent;
 }
 .nav-tabs > li > a {
@@ -1557,11 +1557,11 @@ a {
     /*border-radius: 0;*/ /*commented by mahesh on 17-01-2017*/
     border-radius: 4px;
     box-shadow: none;
-    border-color: #050021!important;
+    border-color: #676767 !important;
 }
 
     .form-control:focus {
-        border-color: #050021;
+        border-color: #676767;
         box-shadow: none;
     }
 
@@ -1621,11 +1621,10 @@ a {
     /*border-radius: 0;*/
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
-    border-color: #050021 !important;
+    border-color: #8a8a8a !important;
     height: 30px;
-    background-color: #050021!important;
-    opacity:0.7!important;
-    padding-top:0px!important;
+    background-color: #8a8a8a !important;
+    padding-top: 0px !important;
 }
 
 .input-group-addon {
@@ -1633,10 +1632,10 @@ a {
     font-size: 14px;
     font-weight: 400;
     line-height: 1;
-    color: #fff!important;
+    color: #fff !important;
     text-align: center;
     background-color: #7f1933;
-    border: 1px solid #ccc;
+    border: 1px solid #8a8a8a;
     border-radius: 4px;
 }
 /* button groups */
@@ -2790,9 +2789,9 @@ a {
         color: #050021;
     }
 .btn-ggb-orange {
-    background-color: #050021!important;
-    border-color: #050021!important;
-    color: #fff!important;
+    background-color: #676767 !important;
+    border-color: #676767 !important;
+    color: #fff !important;
 }
 
     .btn-ggb-orange:hover,
@@ -2807,7 +2806,7 @@ a {
     .btn-ggb-orange.active:active,
     .btn-ggb-orange.active:focus {
         background-color: #7f1933;
-        color: #050021;
+        color: #676767;
     }
 
 .btn-success {
